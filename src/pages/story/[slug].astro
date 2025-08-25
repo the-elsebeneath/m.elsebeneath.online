@@ -33,10 +33,8 @@ const related = all
     e,
     score: e.data.tags?.some((t) => (tags || []).includes(t)) ? 1 : 0,
   }))
-  .sort(
-    (a, b) => b.score - a.score || (b.e.data.order || 0) - (a.e.data.order || 0)
-  )
-  .slice(0, 2)
+  .sort((a, b) => (a.e.data.order || 0) - (b.e.data.order || 0))
+  .slice(0, 0)
   .map((x) => x.e);
 ---
 
