@@ -21,7 +21,7 @@ const canonical = `https://m.elsebeneath.online${Astro.url.pathname}`;
       content="
         default-src 'self' https://m.elsebeneath.online;
         script-src 'self' 'unsafe-inline' 'unsafe-eval' https://m.elsebeneath.online https://www.googletagmanager.com https://www.clarity.ms https://scripts.clarity.ms https://cloudflareinsights.com https://static.cloudflareinsights.com https://cdn.jsdelivr.net https://fonts.googleapis.com;
-        style-src 'self' 'unsafe-inline' https://m.elsebeneath.online https://cdn.jsdelivr.net https://fonts.googleapis.com https://www.google-analytics.com;
+        style-src 'self' 'unsafe-inline' https://m.elsebeneath.online https://cdn.jsdelivr.net https://fonts.googleapis.com https://www.google-analytics.com https://www.googletagmanager.com;
         img-src 'self' data: https: https://m.elsebeneath.online;
         connect-src 'self' https://m.elsebeneath.online https://static.cloudflareinsights.com https://www.google-analytics.com https://analytics.google.com https://a.clarity.ms https://www.clarity.ms https://cloudflareinsights.com https://www.googletagmanager.com https://stats.g.doubleclick.net;
         font-src 'self' https://m.elsebeneath.online https://fonts.gstatic.com https://cdn.jsdelivr.net;
@@ -199,7 +199,7 @@ const canonical = `https://m.elsebeneath.online${Astro.url.pathname}`;
         }
 
         if ("requestIdleCallback" in window) {
-          window.requestIdleCallback(loadGTM, { timeout: 1000 }); // <-- dictionary, not a number
+          window.requestIdleCallback(loadGTM, { timeout: 1000 });
         } else {
           setTimeout(loadGTM, 1);
         }
