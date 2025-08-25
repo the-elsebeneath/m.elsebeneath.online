@@ -3,7 +3,7 @@ title: "The Mountain of Mastery"
 name: "mountain"
 description: "Book 3 of The Elsebeneath series"
 cover: "/images/covers/mountain.webp"
-readingTime: "18 min"
+readingTime: "25 min"
 order: 2
 ---
 

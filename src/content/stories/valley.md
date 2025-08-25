@@ -4,7 +4,7 @@ name: "valley"
 description: "Book 2 of The Elsebeneath series"
 cover: "/images/covers/valley.webp"
 audio: "https://audio.thrd.me/valley.mp3"
-readingTime: "18 min"
+readingTime: "20 min"
 order: 1
 ---
 

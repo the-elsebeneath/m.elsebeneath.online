@@ -4,7 +4,7 @@ name: "archive"
 description: "Book 5 of the Elsebeneath series"
 cover: "/images/covers/archive.webp"
 audio: "https://audio.thrd.me/archive.mp3"
-readingTime: "18 min"
+readingTime: "60 min"
 order: 5
 ---
 
