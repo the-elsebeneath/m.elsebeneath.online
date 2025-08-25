@@ -5,6 +5,7 @@ description: ""
 cover: "/images/covers/theater.webp"
 audio: "https://audio.thrd.me/theater.mp3"
 readingTime: "18 min"
+order: 8
 ---
 
 # How It Didn’t Happen

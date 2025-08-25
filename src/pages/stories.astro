@@ -377,11 +377,10 @@ const pageDesc =
     .stories-grid {
       position: relative;
     }
-
     .grid {
       display: grid;
       gap: 2rem;
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
     @media (min-width: 48rem) {
