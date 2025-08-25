@@ -4,8 +4,8 @@ name: "kippen"
 description: "An Elsebeneath interlude."
 cover: "/images/covers/kippen.webp"
 audio: "https://audio.thrd.me/kippen.mp3"
-readingTime: "4 min"
-tags: ["cozy", "elsebeneath"]
+readingTime: "13 min"
+order: 4
 ---
 
 # A Kitten Named Kippen

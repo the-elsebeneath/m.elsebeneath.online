@@ -6,9 +6,9 @@ const all = await getCollection("stories");
 
 // newest first
 const stories = all.sort((a, b) => {
-  const da = new Date(a.data.order || 0).getTime();
-  const db = new Date(b.data.order || 0).getTime();
-  return db - da;
+  const da = a.data.order || 0;
+  const db = b.data.order || 0;
+  return da - db;
 });
 
 const pageTitle = "All stories — Elsebeneath";
