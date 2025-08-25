@@ -1,0 +1,96 @@
+---
+// src/components/BaseLayout.astro
+import "../styles/reader.css";
+const {
+  title = "The Elsebeneath",
+  description = "Free, ad-free stories. Tips optional.",
+  image = "/logo.webp",
+  fullMain = false, // NEW
+} = Astro.props;
+
+const canonical = `https://m.elsebeneath.online${Astro.url.pathname}`;
+// const isStory = Astro.url.pathname.startsWith("/story/");
+---
+
+<!doctype html>
+<html lang="en" data-lowdata="false">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preload" as="image" href="/images/elsebeneath.webp" />
+    <link rel="preload" as="image" href="/images/logo.webp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <link rel="icon" href="/favicon/favicon.ico" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index,follow" />
+
+    <!-- Social -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta
+      property="og:image"
+      content={`https://m.elsebeneath.online${image}`}
+    />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Sitemap hint -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+
+    <!-- Respect slow connections -->
+    <script is:inline>
+      (function () {
+        const c = navigator.connection || {};
+        if (
+          c.saveData ||
+          ["slow-2g", "2g", "3g"].includes(c.effectiveType || "")
+        ) {
+          document.documentElement.setAttribute("data-lowdata", "true");
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <header role="banner" class="wrap nav-dots">
+      <nav class="doors" aria-label="Explore">
+        <a class="btn pill" href="/">Home</a>
+        <a class="btn pill" href="/stories">Read Stories</a>
+        <a class="btn pill" href="/about">About</a>
+      </nav>
+    </header>
+
+    <main id="main" role="main" class={fullMain ? "" : "wrap"}>
+      <slot />
+    </main>
+
+    <footer class="wrap" role="contentinfo">
+      <p>Free, ad-free stories. Tips optional.</p>
+    </footer>
+
+    <!-- Analytics: only on fast connections, after idle; never block render -->
+    <script is:inline>
+      (function () {
+        const slow =
+          document.documentElement.getAttribute("data-lowdata") === "true";
+        if (slow) return;
+
+        // load GTM non-blocking
+        function loadGTM() {
+          window.dataLayer = window.dataLayer || [];
+          const s = document.createElement("script");
+          s.async = true; // defer has no effect for dynamic scripts
+          s.src = "https://www.googletagmanager.com/gtm.js?id=GTM-P66KZGWV";
+          document.head.appendChild(s);
+        }
+
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(loadGTM, { timeout: 1000 }); // <-- dictionary, not a number
+        } else {
+          setTimeout(loadGTM, 1);
+        }
+      })();
+    </script>
+  </body>
+</html>

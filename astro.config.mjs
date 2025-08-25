@@ -1,5 +1,16 @@
-// @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
+import react from "@astrojs/react";
+export default defineConfig({
+  site: "https://m.elsebeneath.online",
+  trailingSlash: "never",
+  integrations: [sitemap(), react()],
+  vite: {
+    assetsInclude: ["**/*.avif"],
+  },
 
-// https://astro.build/config
-export default defineConfig({});
+  image: {
+    domains: ["m.elsebeneath.online"],
+    formats: ["avif", "webp", "jpeg"],
+  },
+});

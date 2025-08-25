@@ -1,16 +1,302 @@
 ---
-
+import Base from "../components/BaseLayout.astro";
+const GLYPH = "/images/elsebeneath.webp";
+const title = "The Elsebeneath";
+const description =
+  "A quiet collection of stories stitched from memory, wind, and what we almost said. Some were written for my son. All were written to be shared.";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base
+  title={title}
+  description={description}
+  image="/logo.webp"
+  fullMain={true}
+>
+  <section class="hero" aria-label="Welcome">
+    <div class="wrap hero-inner">
+      <picture>
+        <source srcset="/images/elsebeneath.avif" type="image/avif" />
+        <source srcset="/images/elsebeneath.webp" type="image/webp" />
+        <img
+          src="/images/elsebeneath.webp"
+          alt="logo glyph"
+          width="240"
+          height="240"
+          class="glyph"
+          decoding="async"
+          fetchpriority="high"
+          loading="eager"
+        />
+      </picture>
+      <h1 class="display">Welcome to the Elsebeneath</h1>
+      <p class="lead">
+        A quiet collection of stories stitched from memory, wind, and what we
+        almost said. Some were written for my son. All were written to be
+        shared.
+      </p>
+      <p class="aside">
+        Living drafts... Start with <a href="/story/kippen">"Kippen"</a> or <a
+          href="/story/village">"Village."</a
+        >
+      </p>
+      <nav class="doors" aria-label="Choose a door">
+        <a class="btn pill" href="/stories">I'm a Kid</a>
+        <a class="btn pill" href="/about">I'm a Grown-Up</a>
+        <a class="btn pill" href="/story/kippen">I'm Just Curious</a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="wrap cta">
+    <a
+      class="btn primary"
+      href="https://thrd.me/tip"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      ✨ Fuel the Next Chapter
+    </a>
+  </section>
+
+  <style>
+    .wrap {
+      max-width: 42rem;
+      margin-inline: auto;
+      padding: 1rem;
+    }
+
+    .display {
+      font:
+        700 2rem/1.2 ui-serif,
+        Georgia,
+        Cambria,
+        "Times New Roman",
+        serif;
+      margin: 0.5rem 0 0;
+      color: #ffffff;
+    }
+
+    @media (min-width: 40rem) {
+      .display {
+        font-size: 2.5rem;
+      }
+    }
+
+    .lead {
+      font-size: 1.125rem;
+      color: #dbeafe;
+      margin: 0.75rem 0 0;
+      line-height: 1.6;
+    }
+
+    .aside {
+      color: #c7d2fe;
+      margin: 0.75rem 0 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    .aside a {
+      color: #a78bfa;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .aside a:hover {
+      color: #c4b5fd;
+      text-decoration: underline;
+    }
+
+    .hero {
+      color: #e2e8f0;
+      padding: 2.5rem 0 3rem;
+      background: radial-gradient(
+          ellipse 120% 70% at 50% -20%,
+          rgba(124, 58, 237, 0.4),
+          rgba(124, 58, 237, 0.1) 50%,
+          transparent 70%
+        ),
+        linear-gradient(
+          135deg,
+          #1e1b4b 0%,
+          #312e81 25%,
+          #1e3a8a 50%,
+          #1e40af 75%,
+          #1d4ed8 100%
+        );
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(
+          circle at 20% 50%,
+          rgba(139, 92, 246, 0.1) 0%,
+          transparent 50%
+        ),
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(59, 130, 246, 0.1) 0%,
+          transparent 50%
+        ),
+        radial-gradient(
+          circle at 40% 80%,
+          rgba(147, 51, 234, 0.1) 0%,
+          transparent 50%
+        );
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'><path fill='%23ffffff' d='M0,60 C300,120 600,0 900,60 C1050,90 1150,30 1200,60 L1200,120 L0,120 Z'/></svg>")
+        no-repeat center bottom;
+      background-size: 100% 120px;
+    }
+
+    .hero-inner {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .glyph {
+      display: block;
+      margin: 0 auto 1rem;
+      width: 160px;
+      height: auto;
+      filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.4));
+      border-radius: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .glyph:hover {
+      transform: scale(1.05);
+    }
+
+    .doors {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.25rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border-radius: 0.75rem;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn.pill {
+      border-radius: 999px;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      border-color: #6366f1;
+      color: #ffffff;
+    }
+
+    .btn.primary:hover {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      border-color: #7c3aed;
+      transform: translateY(-2px);
+    }
+
+    .cta {
+      text-align: center;
+      padding: 2rem 0 3rem;
+      background: #ffffff;
+    }
+
+    :focus-visible {
+      outline: 3px solid #7c3aed;
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 39.9rem) {
+      .hero {
+        min-height: 50vh;
+        padding: 2rem 0;
+      }
+
+      .display {
+        font-size: 1.75rem;
+      }
+
+      .lead {
+        font-size: 1rem;
+      }
+
+      .doors {
+        gap: 0.5rem;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        min-width: 200px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn,
+      .glyph,
+      a {
+        transition: none !important;
+      }
+
+      .hero::before {
+        display: none;
+      }
+    }
+
+    /* Low-data mode optimizations */
+    [data-lowdata="true"] .hero {
+      background: linear-gradient(135deg, #1e1b4b, #1d4ed8);
+    }
+
+    [data-lowdata="true"] .hero::before,
+    [data-lowdata="true"] .hero::after {
+      display: none;
+    }
+
+    [data-lowdata="true"] .btn {
+      backdrop-filter: none;
+    }
+  </style>
+</Base>
