@@ -68,9 +68,24 @@ const canonical = `https://m.elsebeneath.online${Astro.url.pathname}`;
   <body>
     <header role="banner" class="wrap nav-dots">
       <nav class="doors" aria-label="Explore">
-        <a class="btn pill" href="/">Home</a>
-        <a class="btn pill" href="/stories">Read Stories</a>
-        <a class="btn pill" href="/about">About</a>
+        <a
+          class="btn pill"
+          href="/"
+          data-gtm-event="nav_click"
+          data-gtm-section="Home">Home</a
+        >
+        <a
+          class="btn pill"
+          href="/stories"
+          data-gtm-event="nav_click"
+          data-gtm-section="Read Stories">Read Stories</a
+        >
+        <a
+          class="btn pill"
+          href="/about"
+          data-gtm-event="nav_click"
+          data-gtm-section="About">About</a
+        >
       </nav>
     </header>
 
@@ -96,6 +111,19 @@ const canonical = `https://m.elsebeneath.online${Astro.url.pathname}`;
           s.async = true; // defer has no effect for dynamic scripts
           s.src = "https://www.googletagmanager.com/gtm.js?id=GTM-P66KZGWV";
           document.head.appendChild(s);
+          (function initClick() {
+            document.addEventListener("click", function (e) {
+              const target = e.target.closest("[data-gtm-event]");
+              if (target) {
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                  event: target.getAttribute("data-gtm-event"),
+                  nav_section: target.getAttribute("data-gtm-section"),
+                  nav_url: target.getAttribute("href"),
+                });
+              }
+            });
+          })();
         }
 
         if ("requestIdleCallback" in window) {
