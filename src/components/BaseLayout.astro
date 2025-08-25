@@ -64,106 +64,6 @@ const canonical = `https://m.elsebeneath.online${Astro.url.pathname}`;
         }
       })();
     </script>
-    <style>
-      #cookie-banner {
-        position: fixed;
-        bottom: 24px;
-        left: 50%;
-        z-index: 9999;
-        width: 90%;
-        max-width: 384px;
-        transform: translateX(-50%);
-        border-radius: 12px;
-        border: 1px solid #d1d5db;
-        background-color: white;
-        padding: 16px;
-        text-align: center;
-        box-shadow:
-          0 10px 15px -3px rgba(0, 0, 0, 0.1),
-          0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          sans-serif;
-        display: none;
-      }
-
-      #cookie-banner p {
-        font-size: 14px;
-        color: #1f2937;
-        margin: 0 0 12px 0;
-        line-height: 1.4;
-      }
-
-      #cookie-banner .button-container {
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-      }
-
-      #cookie-accept {
-        border-radius: 8px;
-        background-color: #7c3aed;
-        padding: 6px 16px;
-        font-size: 14px;
-        font-weight: 500;
-        color: white;
-        border: none;
-        cursor: pointer;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-        transition: background-color 0.2s;
-      }
-
-      #cookie-accept:hover {
-        background-color: #6d28d9;
-      }
-
-      #cookie-accept:focus {
-        outline: none;
-        box-shadow: 0 0 0 2px #a78bfa;
-      }
-
-      #cookie-reject {
-        border-radius: 8px;
-        background-color: #e5e7eb;
-        padding: 6px 16px;
-        font-size: 14px;
-        font-weight: 500;
-        color: #374151;
-        border: none;
-        cursor: pointer;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-        transition: background-color 0.2s;
-      }
-
-      #cookie-reject:hover {
-        background-color: #d1d5db;
-      }
-
-      #cookie-reject:focus {
-        outline: none;
-        box-shadow: 0 0 0 2px #9ca3af;
-      }
-
-      /* Dark mode styles */
-      @media (prefers-color-scheme: dark) {
-        #cookie-banner {
-          border-color: #374151;
-          background-color: #1f2937;
-        }
-
-        #cookie-banner p {
-          color: #f9fafb;
-        }
-
-        #cookie-reject {
-          background-color: #374151;
-          color: #e5e7eb;
-        }
-
-        #cookie-reject:hover {
-          background-color: #4b5563;
-        }
-      }
-    </style>
   </head>
   <body>
     <header role="banner" class="wrap nav-dots">
@@ -206,4 +106,104 @@ const canonical = `https://m.elsebeneath.online${Astro.url.pathname}`;
       })();
     </script>
   </body>
+  <style>
+    #cookie-banner {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      z-index: 9999;
+      width: 90%;
+      max-width: 384px;
+      transform: translateX(-50%);
+      border-radius: 12px;
+      border: 1px solid #d1d5db;
+      background-color: white;
+      padding: 16px;
+      text-align: center;
+      box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        sans-serif;
+      display: none;
+    }
+
+    #cookie-banner p {
+      font-size: 14px;
+      color: #1f2937;
+      margin: 0 0 12px 0;
+      line-height: 1.4;
+    }
+
+    #cookie-banner .button-container {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    #cookie-accept {
+      border-radius: 8px;
+      background-color: #7c3aed;
+      padding: 6px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: white;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      transition: background-color 0.2s;
+    }
+
+    #cookie-accept:hover {
+      background-color: #6d28d9;
+    }
+
+    #cookie-accept:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #a78bfa;
+    }
+
+    #cookie-reject {
+      border-radius: 8px;
+      background-color: #e5e7eb;
+      padding: 6px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #374151;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      transition: background-color 0.2s;
+    }
+
+    #cookie-reject:hover {
+      background-color: #d1d5db;
+    }
+
+    #cookie-reject:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #9ca3af;
+    }
+
+    /* Dark mode styles */
+    @media (prefers-color-scheme: dark) {
+      #cookie-banner {
+        border-color: #374151;
+        background-color: #1f2937;
+      }
+
+      #cookie-banner p {
+        color: #f9fafb;
+      }
+
+      #cookie-reject {
+        background-color: #374151;
+        color: #e5e7eb;
+      }
+
+      #cookie-reject:hover {
+        background-color: #4b5563;
+      }
+    }
+  </style>
 </html>
