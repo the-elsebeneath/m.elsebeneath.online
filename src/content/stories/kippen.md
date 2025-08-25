@@ -3,7 +3,7 @@ title: "A Kitten Named Kippen"
 name: "kippen"
 description: "An Elsebeneath interlude."
 cover: "/images/covers/kippen.webp"
-audio: "/audio/kippen.mp3"
+audio: "https://audio.thrd.me/kippen.mp3"
 readingTime: "4 min"
 tags: ["cozy", "elsebeneath"]
 ---
