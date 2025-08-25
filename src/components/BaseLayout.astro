@@ -4,7 +4,7 @@ import "../styles/reader.css";
 const {
   title = "The Elsebeneath",
   description = "Free, ad-free stories. Tips optional.",
-  image = "/logo.webp",
+  image = "/elsebeneath.webp",
   fullMain = false, // NEW
 } = Astro.props;
 
@@ -29,7 +29,7 @@ const canonical = `https://m.elsebeneath.online${Astro.url.pathname}`;
     <meta property="og:description" content={description} />
     <meta
       property="og:image"
-      content={`https://m.elsebeneath.online${image}`}
+      content={`https://m.elsebeneath.online/images/elsebeneath.webp`}
     />
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary_large_image" />
