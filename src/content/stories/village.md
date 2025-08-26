@@ -3,7 +3,8 @@ title: "The Village of Voicekeepers"
 name: "village"
 description: "Book 4 of The Elsebeneath series"
 cover: "/images/covers/village.webp"
-readingTime: "45 min"
+audio: "https://audio.thrd.me/village.mp3"
+readingTime: "90 min"
 order: 3
 ---
 
