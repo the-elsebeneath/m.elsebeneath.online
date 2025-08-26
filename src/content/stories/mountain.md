@@ -3,6 +3,7 @@ title: "The Mountain of Mastery"
 name: "mountain"
 description: "Book 3 of The Elsebeneath series"
 cover: "/images/covers/mountain.webp"
+audio: "https://audio.thrd.me/mountain.mp3"
 readingTime: "25 min"
 order: 2
 ---
